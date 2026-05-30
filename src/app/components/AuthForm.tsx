@@ -11,7 +11,7 @@ export default function AuthForm({ type }: { type: 'signup' | 'login' }) {
     e.preventDefault();
     try {
       const endpoint = type === 'signup' ? '/auth/signup' : '/auth/login';
-      const res = await axios.post(`http://localhost:5000${endpoint}`, formData);
+      const res = await axios.post('/api/auth/signup', formData);
       alert(res.data.message);
       if (res.status === 201 || res.status === 200) {
         router.push('/diary');
