@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 export async function POST(req: Request) {
   try {
