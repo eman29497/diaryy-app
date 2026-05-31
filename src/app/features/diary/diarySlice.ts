@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
-const API_URL = 'http://localhost:5000/diaries';
+const API_URL = '/api/diaries';
 
 
 export interface Diary {
@@ -20,8 +20,8 @@ export const addDiary = createAsyncThunk('diary/add', async (data: Diary) => {
 });
 
 
-export const deleteDiary = createAsyncThunk('diary/delete', async (id: string) => {
-  await axios.delete(`${API_URL}/${id}`);
+export const deleteDiary = createAsyncThunk('/api/diary/delete', async (id: string) => {
+  await axios.delete(`${API_URL}?id=${id}`);
   return id;
 });
 
