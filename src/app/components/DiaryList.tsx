@@ -15,7 +15,7 @@ export const DiaryList = () => {
 
   return (
     <div className="max-w-md mx-auto mt-8 space-y-4">
-      {diaries.map((diary) => (
+      {diaries && diaries.map((diary) => (
         <div key={diary._id} className="bg-white p-6 rounded-2xl shadow-sm border border-indigo-50 flex justify-between items-start">
           <div className="mr-4">
             <h3 className="text-lg font-semibold text-indigo-900">{diary.title}</h3>
